@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 @SpringBootApplication
 @RestController
+@CrossOrigin(origins = {"http://localhost:3000", "https://xavier-capgemini-web.herokuapp.com"})
 public class InterviewApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(InterviewApplication.class, args);
@@ -22,14 +23,12 @@ public class InterviewApplication {
 	}
 
 	/* Get all appliances */
-	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping(value = "/appliance/list")
 	public ResponseEntity<ArrayList<Appliance>> getApplianceList() {
 		return new ResponseEntity<>(this.applianceData.getApplianceList(), HttpStatus.OK);
 	}
 
 	/* Create a new appliance */
-	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping(value = "/appliance", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<Appliance>  createAppliance(@RequestBody Appliance appliance) {
 		this.applianceData.add(appliance);
@@ -37,7 +36,6 @@ public class InterviewApplication {
 	}
 
 	/* Update an existing appliance */
-	@CrossOrigin(origins = "http://localhost:3000")
 	@PutMapping(value = "/appliance", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<Appliance>  updateAppliance(@RequestParam("id") String id, @RequestBody Appliance body) {
 		Appliance updated = this.applianceData.update(id, body);
@@ -45,7 +43,6 @@ public class InterviewApplication {
 	}
 
 	/* Delete an existing appliance */
-	@CrossOrigin(origins = "http://localhost:3000")
 	@DeleteMapping(value = "/appliance")
 	public ResponseEntity<String> deleteAppliance(@RequestParam("id") String id) {
 		this.applianceData.remove(id);
