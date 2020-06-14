@@ -1,5 +1,5 @@
 Backend API service for appliance manager frontend written in Java Spring Boot framework
-***
+===
 
 GET: https://xavier-capgemini.herokuapp.com/appliance/list
 
