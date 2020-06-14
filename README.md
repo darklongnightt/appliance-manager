@@ -12,7 +12,7 @@ DELETE: https://xavier-capgemini.herokuapp.com/appliance?id=<applianceID>
 ***
 Backend Host: https://xavier-capgemini.herokuapp.com
 
-Backend Repo: https://github.com/darklongnightt/appliance-manager/tree/master/src/main/java/com/capgemini/interview
+Backend Repo: https://github.com/darklongnightt/appliance-manager
 
 Frontend Host: https://xavier-capgemini-web.herokuapp.com
 
